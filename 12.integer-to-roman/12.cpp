@@ -14,7 +14,7 @@ public:
 		string S;
 		int i = 0;
 
-		while (num >= 1000) num -= 1000; S += "M";
+		if (num >= 1000) num -= 1000; S += "M";
 		if (num >= 800) {
 			int i = (1000-num)/100;
 			while (i-- > 0) num -= 100; S += "C";
