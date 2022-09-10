@@ -1,32 +1,24 @@
 /**
  * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
  */
-
-package main
-
-import "fmt"
-
-type ListNode struct {
-	Val int
- 	Next *ListNode
-}
-
-type list struct {
-	head *ListNode
-}
-
-func isPalindrome(head *ListNode) bool {
-	fmt.Println(head)
-	return true
-}
-
-func main () {
-	head *ListNode
-
-	head.val = 0
-	isPalindrome(ListNode)
-}
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        vector<int> node;
+		while (head != nil) {
+			node.push_back(head.val);
+			head = head.next;
+		}
+		for (int i = 0, j = node.size() - 1; i < node.size() / 2; i++, j--) {
+			if (node[i] != node[j]) return false;
+		}
+		return true;
+    }
+};
